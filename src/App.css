@@ -1,0 +1,58 @@
+.app {
+  
+}
+
+.app__logo {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+}
+
+.app__vector {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 630px 61.5px 0;
+  border-color: transparent #60CD6C transparent transparent;
+}
+
+.app__container {
+  width: 978px;
+  margin: 96px auto 0 auto;
+  padding: 20px 40px;
+  border: 7px solid #A5A6A9;
+  border-radius: 10px;
+}
+
+.app__container__ellipse {
+  display: inline-block;
+  min-width: 11px;
+  min-height: 11px;
+  background: #221F20;
+  border-radius: 50%;
+  margin-right: 9px;
+}
+
+.app__container__input {
+  display: block;
+  width: calc(100% - 40px);
+
+  color:#b8b8b8;
+  background: #221F20;
+  border-radius: 10px;
+
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 139.64%;
+  text-decoration-line: underline;
+
+  border: 0;
+  outline: none;
+  padding: 5px 20px;
+  margin: 24px 0 55px 0;
+}

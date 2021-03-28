@@ -1,0 +1,32 @@
+.post-card {
+  display: flex;
+  flex-direction: row;
+  background: #424242;
+  padding: 21px 24px;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-card span {
+  flex: 1;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height */
+
+  color: #ACACAC;
+}
+
+.post-card__trash {
+  width: 16px;
+  height: 20px;
+  margin-right: 16px;
+}
+
+.post-card__arrow {
+  width: 7.6px;
+  height: 14px;
+}
