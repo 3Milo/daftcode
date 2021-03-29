@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import UserCard from "../components/UserCard";
 import './UsersList.css';
 
+import api from "../api/API";
+
 function UsersList() {
 
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://my-json-server.typicode.com/3Milo/database/users')
-      .then(response => response.json())
-      .then(data => setUsers(data));
+    api.getUsers().then(users => setUsers(users));
   }, []);
 
   return (

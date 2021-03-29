@@ -1,0 +1,36 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 500px;
+  background: #fff;
+  padding: 20px;
+}
+
+.modal-header {
+  margin-bottom: 20px;
+}
+
+.modal-body form, .modal-body form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.modal-body form label {
+  margin-bottom: 10px;
+}
+
+.modal-body textarea {
+  min-height: 200px;
+  resize: none;
+}

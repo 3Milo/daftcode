@@ -7,10 +7,10 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 const userName =  (state = {}, action) => {
-  if (action.type === 'SET_USER_NAME') {
+  if (action.type === 'SET_USER') {
     return {
       ...state,
-      userName: action.payload
+      user: action.payload
     }
   }
   return state;
