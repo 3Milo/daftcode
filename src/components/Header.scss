@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 45px;
+    color: #60CD6C;
+  }
+  
+  &__back {
+    width: 25px;
+    height: 14px;
+    cursor: pointer;
+  }
+}

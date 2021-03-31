@@ -3,20 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-const userName =  (state = {}, action) => {
-  if (action.type === 'SET_USER') {
-    return {
-      ...state,
-      user: action.payload
-    }
-  }
-  return state;
-};
-
-const store = createStore(userName);
+import store from './store/Store';
 
 ReactDOM.render(
   <React.StrictMode>

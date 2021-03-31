@@ -1,8 +1,8 @@
-import './AddButton.css';
+import './AddButton.scss';
 
-function AddButton() {
+function AddButton(props) {
   return (
-    <div className="add-button">
+    <div className="add-button" onClick={props.onClick}>
       <span>+</span>
     </div>
   );

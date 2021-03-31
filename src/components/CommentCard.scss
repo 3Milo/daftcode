@@ -1,0 +1,44 @@
+.comment-card {
+  background: #221F20;
+  border-radius: 10px;
+  padding: 16px 24px;
+  margin-top: 20px;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__name {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 136.2%;
+    /* or 19px */
+    color: #F2F2F2;
+  }
+  
+  &__email {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 136.2%;
+    /* identical to box height, or 19px */
+    color: #60CD6C;
+  }
+  
+  &__body {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 136.2%;
+    /* or 19px */
+    color: #F2F2F2;
+  }
+}

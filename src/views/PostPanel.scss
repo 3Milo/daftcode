@@ -1,0 +1,46 @@
+.post-panel {
+  width: 100%;
+
+  &__title {
+    font-weight: 700;
+  }
+  
+  &__body {
+    margin-top: 20px;
+  }
+
+  &__post {
+    display: flex;
+    flex-direction: column;
+  
+    margin: 53px 82px 0 82px;
+  
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 33px;
+    color: #F2F2F2;
+  }
+
+  &__comments {
+    margin: 0 82px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration-line: underline;
+  
+    margin: 42px 82px 32px 82px;
+  
+    color: #60CD6C;
+  
+    cursor: pointer;
+  }
+}

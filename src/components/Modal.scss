@@ -1,0 +1,46 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 500px;
+    background: #fff;
+    padding: 20px;
+
+    &__header {
+      margin-bottom: 20px;
+    }
+
+    &__body {
+
+      form  {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: stretch;
+          margin-bottom: 10px;
+        }
+
+        input[type=submit] {
+          margin-bottom: 10px;
+        }
+      }
+
+      textarea {
+        min-height: 200px;
+        resize: none;
+      }
+    }
+  }
+}

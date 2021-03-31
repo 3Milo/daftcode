@@ -1,0 +1,28 @@
+.app {
+  font-family: Source Sans Pro;
+
+  &__logo {
+    position: absolute;
+    top: 24px;
+    left: 40px;
+  }
+
+  &__vector {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 630px 61.5px 0;
+    border-color: transparent #60CD6C transparent transparent;
+  }
+
+  &__container {
+    width: 978px;
+    margin: 96px auto;
+    padding: 20px 40px;
+    border: 7px solid #A5A6A9;
+    border-radius: 10px;
+  }
+}

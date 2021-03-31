@@ -1,0 +1,63 @@
+.user-card {
+  width: 244px;
+  padding: 23px;
+  background-color: #424242;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    display: block;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 33px;
+    color: #60CD6C;
+    margin-bottom: 14px;
+  }
+
+  &__body {
+    flex: 1;
+    align-items: stretch;
+
+    &__contact {
+      margin-bottom: 31px;
+
+      span {
+        display: block;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration-line: underline;
+        color: #EFEFEF;
+      }
+    }
+
+    &__company {
+      margin-bottom: 42px;
+
+      > span {
+        display: block;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: #ACACAC;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 70px;
+
+    background: #FFFFFF;
+    border-radius: 90px;
+    cursor: pointer;
+  }
+}

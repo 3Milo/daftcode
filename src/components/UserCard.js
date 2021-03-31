@@ -1,21 +1,32 @@
-import {Link} from "react-router-dom";
-import './UserCard.css';
+import {useHistory} from "react-router-dom";
+import './UserCard.scss';
 
 function UserCard(props) {
+
+  const history = useHistory();
+
+  const onDetailsLinkClick = () => {
+    history.push(`/users/${props.user.id}`);
+  };
+
   return (
     <div className="user-card">
-      <span className="user-card__title">{props.user.name}</span>
-      <div className="user-card__contact">
-        <span>{props.user.email}</span>
-        <span>{props.user.phone.split(' ')[0]}</span>
-        <span>{props.user.website}</span>
+      <div className="user-card__title">
+        {props.user.name}
       </div>
-      <div className="user-card__company">
-        <span>{props.user.company.name}</span>
-        <span>{props.user.company.catchPhrase}</span>
-        <span>{props.user.company.bs}</span>
+      <div className="user-card__body">
+        <div className="user-card__body__contact">
+          <span>{props.user.email}</span>
+          <span>{props.user.phone.split(' ')[0]}</span>
+          <span>{props.user.website}</span>
+        </div>
+        <div className="user-card__body__company">
+          <span>{props.user.company.name}</span>
+          <span>{props.user.company.catchPhrase}</span>
+          <span>{props.user.company.bs}</span>
+        </div>
       </div>
-      <Link to={"/users/" + props.user.id} className="user-card__button">Details</Link>
+      <div className="user-card__button" onClick={onDetailsLinkClick}>Details</div>
     </div>
   );
 }

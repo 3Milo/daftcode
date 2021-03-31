@@ -1,0 +1,33 @@
+.search-panel {
+  width: 100%;
+  box-sizing: border-box;
+
+  &__ellipse {
+    display: inline-block;
+    min-width: 11px;
+    min-height: 11px;
+    background: #221F20;
+    border-radius: 50%;
+    margin-right: 9px;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+
+    color:#b8b8b8;
+    background: #221F20;
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 139.64%;
+    text-decoration-line: underline;
+
+    border: 0;
+    outline: none;
+    padding: 5px 20px;
+    margin: 24px 0 55px 0;
+  }
+}

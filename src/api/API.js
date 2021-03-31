@@ -8,7 +8,15 @@ const api = {
 
   fetchData(url, params = {}) {
     params.headers = headers;
-    return fetch(url, params).then(res => res.json()).then(data => data);
+    return fetch(url, params)
+      .then(res => {
+        if (res.status >= 200 && res.status < 300) {
+          return res.json();
+        }
+        window.alert(`API error status ${res.status}`);
+        return Promise.reject(`API error status ${res.status}`);
+      })
+      .then(data => data);
   },
 
   get(url) {
@@ -41,7 +49,7 @@ const api = {
   },
 
   getUsers(params = '') {
-    return this.get(`/users/${params}`);
+    return this.get(`/users${params}`);
   },
 
   getUser(id) {
@@ -49,7 +57,7 @@ const api = {
   },
 
   getPosts(params = '') {
-    return this.get(`/posts/${params}`);
+    return this.get(`/posts${params}`);
   },
 
   getPost(id) {
@@ -57,7 +65,7 @@ const api = {
   },
 
   getComments(params = '') {
-    return this.get(`/comments/${params}`);
+    return this.get(`/comments${params}`);
   },
 
   getComment(id) {

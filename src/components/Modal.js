@@ -1,67 +1,72 @@
 import { useState } from 'react';
-import './Modal.css';
+import { useSelector } from 'react-redux';
+import './Modal.scss';
 
 import api from "../api/API";
 
 function Modal(props) {
-  const [title, setTitle] = useState('sss');
-  const [message, setMessage] = useState('wwww');
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+
+  const currentUser = useSelector(state => state.user);
 
   if (!props.show) {
     return null;
   }
 
-  const onTitleChange = e => {
-    setTitle(e.target.value);
-  };
+  const onTitleChange = e => setTitle(e.target.value);
 
-  const onMessageChange = e => {
-    setMessage(e.target.value);
-  };
+  const onBodyChange = e => setBody(e.target.value);
 
   const onSubmit = e => {
     e.preventDefault();
 
-    if (!title) {
-      return alert('Title is required.');
+    if (!title.trim()) {
+      return alert('Post title is required.');
     }
 
-    if (!message) {
-      return alert('Message is required.')
+    if (!body.trim()) {
+      return alert('Post body is required.')
     }
 
     api.post('/posts', {
       params: {
-        user_id: 1,
+        userId: currentUser.id,
         title: title,
-        body: message
+        body: body
       }
+    })
+    .then(post => {
+      props.onAdd(post);
+      setTitle('');
+      setBody('');
     });
   };
 
-  const onClick = e => {
-    if (e.target.className === 'modal') {
-
-    }
+  const onClose = () => {
+    props.onClose();
+    setTitle('');
+    setBody('');
   };
 
   return (
-    <div className="modal" onClick={onClick}>
-      <div className="modal-content">
-        <div className="modal-header">
+    <div className="modal">
+      <div className="modal__content">
+        <div className="modal__content__header">
           <b>Add new post</b>
         </div>
-        <div className="modal-body">
+        <div className="modal__content__body">
           <form onSubmit={onSubmit}>
             <label>
               Title:
               <input type="text" value={title} onChange={onTitleChange} />
             </label>
             <label>
-              Message:
-              <textarea value={message} onChange={onMessageChange} ></textarea>
+              Body:
+              <textarea value={body} onChange={onBodyChange} ></textarea>
             </label>
             <input type="submit" value="Send" />
+            <button onClick={onClose}>Close</button>
           </form>
         </div>
       </div>
