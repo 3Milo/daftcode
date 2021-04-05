@@ -3,14 +3,15 @@ import './SearchPanel.scss';
 
 function SearchPanel(props) {
 
-  const [value, setValue] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
   const handleChange = e => {
 
-    //TODO:
-    let value = e.target.value.replace(/\s\s+/g, ' ');
+    let value = e.target.value
+      .replace(/[^A-Za-z ]|^\s/g, '') // replace numbers, symbols, separators different than space, or space on the beginning
+      .replace(/\s+/g, ' '); // replace multiple spaces next to each other in one space
 
-    setValue(value);
+    setInputValue(value);
     props.onSearch(value);
   };
 
@@ -19,7 +20,7 @@ function SearchPanel(props) {
       <div className="search-panel__ellipse"></div>
       <div className="search-panel__ellipse"></div>
       <div className="search-panel__ellipse"></div>
-      <input className="search-panel__input" onChange={handleChange} value={value}></input>
+      <input className="search-panel__input" aria-label="search-input" onChange={handleChange} value={inputValue}></input>
     </div>
   );
 }
